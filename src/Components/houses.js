@@ -13,7 +13,7 @@ import SingleBedIcon from '@material-ui/icons/SingleBed';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: '100%',
     marginBottom: 20
   },
   media: {

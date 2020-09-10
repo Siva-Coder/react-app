@@ -10,14 +10,17 @@ import Typography from '@material-ui/core/Typography';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SquareFootIcon from '@material-ui/icons/SquareFoot';
 import SingleBedIcon from '@material-ui/icons/SingleBed';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100%',
-    marginBottom: 20
+    marginBottom: 20,
+    // flexGrow: 1
   },
   media: {
-    height: 140,
+    height: 200,
   },
   location: {
       display:'flex',
@@ -36,24 +39,43 @@ const useStyles = makeStyles({
   bedrooms:{
       display:'flex',
       marginLeft: '20px'
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  title__price:{
+    display:'flex',
+    justifyContent:'space-between',
+    alignItems:'center'
   }
-});
+}));
 
 export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    // <div className={classes.root}>
+   
+        <Grid item xs={12} sm={4}>
+        <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={props.imageUrl}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent >
+          <div className={classes.title__price} >
           <Typography gutterBottom variant="h6" component="h2">
                 {props.title}
           </Typography>
+          <Typography gutterBottom variant="h6" component="h2">
+                ₹{props.price}
+          </Typography>
+          </div>
+
           <div className={classes.location}>
           <LocationOnIcon /> 
           <Typography variant="body2" className={classes.typo} color="textSecondary" component="p">
@@ -80,10 +102,18 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions style={{float:'right'}}>
-        <Button variant="contained" size="small" style={{borderRadius:50,float:'right',marginBottom:5}} color="primary" >
-          Book Rent
+        <Button variant="contained" size="medium" style={{borderRadius:50,float:'right',marginBottom:5}} color="primary" >
+          View Details
         </Button>
       </CardActions>
     </Card>
+    
+        </Grid>
+
+      
+
+
+   
+// </div>
   );
 }

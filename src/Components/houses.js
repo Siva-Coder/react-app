@@ -17,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100%',
     marginBottom: 20,
+    boxShadow: '0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)'
     // flexGrow: 1
+  },
+  shadow: {
+         boxShadow: '0 10px 6px -6px #777'
   },
   media: {
     height: 200,
@@ -59,7 +63,7 @@ export default function MediaCard(props) {
     // <div className={classes.root}>
    
         <Grid item xs={12} sm={4}>
-        <Card className={classes.root}>
+      <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -101,11 +105,11 @@ export default function MediaCard(props) {
          
         </CardContent>
       </CardActionArea>
-      <CardActions style={{float:'right'}}>
+      {/* <CardActions style={{float:'right'}}>
         <Button variant="contained" size="medium" style={{borderRadius:50,float:'right',marginBottom:5}} color="primary" >
           View Details
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
     
         </Grid>

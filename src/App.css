@@ -37,10 +37,18 @@
   }
 }
 
-.houses::-webkit-scrollbar{
+.Houses::-webkit-scrollbar{
   display: none;
 }
-.houses{
+.Houses{
   -ms-overflow-style:none;
   scrollbar-width: none;
+  position:absolute;
+  height:90%;
+  width:100%;
+  padding:0px;
+  margin: 0px;
+  overflow-Y:scroll;
+  overflow-x: hidden;
+  background:#f4f4f4;
 }
